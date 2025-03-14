@@ -7,8 +7,21 @@ yarn-error.log*
 firebase-debug.log*
 firebase-debug.*.log*
 
+
+# Firebase Admin SDK credentials (DO NOT TRACK THIS)
+serviceAccountKey.json
+
 # Firebase cache
 .firebase/
+
+# Node modules (dependencies should not be tracked)
+node_modules/
+
+# Logs & debug files
+*.log
+firebase-debug.log*
+firebase-debug.*.log*
+
 
 # Firebase config
 
