@@ -3,6 +3,9 @@ import FrontKeychain from "./components/FrontKeychain";
 import BackKeychain from "./components/BackKeychain";
 import "./App.css";
 
+// ✅ Use environment variable for backend URL
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+
 const App = () => {
   // Front
   const [frontImage, setFrontImage] = useState(null);
@@ -29,16 +32,16 @@ const App = () => {
   const handleBackUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
-  
+
     const formData = new FormData();
     formData.append("file", file);
-  
+
     try {
-      const res = await fetch("https://customize-keychain-251651397550.asia-southeast1.run.app/upload-media", {
+      const res = await fetch(`${BACKEND_URL}/upload-media`, {
         method: "POST",
         body: formData,
       });
-  
+
       const data = await res.json();
       if (data.success) {
         setQrCodeImg(data.qrCodeDataUrl);
@@ -51,7 +54,6 @@ const App = () => {
       console.error(err);
     }
   };
-  
 
   const sizeOptions = {
     small: { width: 180, height: 240 },
