@@ -3,7 +3,6 @@ import FrontKeychain from "./components/FrontKeychain";
 import BackKeychain from "./components/BackKeychain";
 import "./App.css";
 
-// ✅ Use environment variable for backend URL
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
 
 const App = () => {
@@ -66,6 +65,7 @@ const App = () => {
       <h1>🎨 Keychain Designer</h1>
 
       <div className="editor">
+        {/* FRONT CONTROLS */}
         <div className="front-controls">
           <h3>Front Keychain</h3>
           <input type="file" accept="image/*" onChange={handleFrontUpload} />
@@ -102,6 +102,7 @@ const App = () => {
           </label>
         </div>
 
+        {/* BACK CONTROLS */}
         <div className="back-controls">
           <h3>Back Keychain</h3>
           <input type="file" accept="audio/*,video/*" onChange={handleBackUpload} />
@@ -142,8 +143,17 @@ const App = () => {
               <option value="large">Large (260×320)</option>
             </select>
           </label>
+
+          {/* ✅ Show QR Code & Short URL */}
+          {qrShortUrl && (
+            <div style={{ marginTop: "10px" }}>
+              <p><strong>Short URL:</strong> <a href={qrShortUrl} target="_blank" rel="noopener noreferrer">{qrShortUrl}</a></p>
+              {qrCodeImg && <img src={qrCodeImg} alt="QR Code" style={{ width: "120px", marginTop: "8px" }} />}
+            </div>
+          )}
         </div>
 
+        {/* LIVE PREVIEWS */}
         <div className="previews">
           <FrontKeychain
             image={frontImage}
