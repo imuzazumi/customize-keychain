@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.app {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Main editor layout: left/right columns */
+.editor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Shared section layout */
+.front-section,
+.back-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+}
+
+/* Inputs and selects */
+.front-section input[type="text"],
+.back-section input[type="text"],
+.front-section select,
+.back-section select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Labels for grouped inputs */
+.front-section label,
+.back-section label {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Checkbox + label layout */
+.front-section input[type="checkbox"],
+.back-section input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+.previews {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Adjust preview layout on larger screens */
+@media (min-width: 768px) {
+  .previews {
+    flex-direction: row;
+  }
+}

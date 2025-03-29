@@ -1,0 +1,131 @@
+.back-keychain {
+  width: var(--keychain-width, 250px);
+  min-height: var(--keychain-height, 280px);
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Hole on top */
+.back-keychain::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.qr-image {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.qr-placeholder {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3;
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.short-url a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #007bff;
+  word-break: break-word;
+  text-align: center;
+}
+
+.spotify-style {
+  width: 100%;
+  font-size: 12px;
+  color: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.song-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 500;
+}
+
+.song-title {
+  font-weight: bold;
+}
+
+.heart {
+  margin-left: auto;
+}
+
+.progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.bar {
+  flex-grow: 1;
+  height: 4px;
+  background: #ccc;
+  border-radius: 2px;
+  position: relative;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  background: #111;
+  border-radius: 50%;
+  position: absolute;
+  top: -3px;
+  left: 20%;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  width: 100%;
+  flex-direction: row; /* <-- Add this to make it horizontal */
+}
+
+
+  
+
+.spotify-barcode {
+  width: 80%;
+  height: 20px;
+  background: repeating-linear-gradient(
+    90deg,
+    #000,
+    #000 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
